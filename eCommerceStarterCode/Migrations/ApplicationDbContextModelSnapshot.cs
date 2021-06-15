@@ -48,15 +48,15 @@ namespace eCommerceStarterCode.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "cf730aff-cc99-40ab-9b13-c319d4b035a0",
-                            ConcurrencyStamp = "7502988b-295d-42ac-9a99-efba80a15863",
+                            Id = "c5da34e1-b6f7-4933-92b5-f3345aa292f7",
+                            ConcurrencyStamp = "8f8df5fb-1e35-477f-a923-17f56aaf6313",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "5090dd85-551b-4ecc-9355-1f3b006388fe",
-                            ConcurrencyStamp = "e4161c54-c3c5-4dd2-bc18-3a8c5136d563",
+                            Id = "f86083d5-53e5-4df4-a249-78106dae6164",
+                            ConcurrencyStamp = "4a8d3ae0-b1fd-434b-9f12-eb100a86fc5c",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -189,7 +189,7 @@ namespace eCommerceStarterCode.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("eCommerceStarterCode.Models.ShoppingCart", b =>
