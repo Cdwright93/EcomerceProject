@@ -15,5 +15,9 @@ namespace eCommerceStarterCode.Models
         public string Description { get; set; }
         public double Price { get; set; }
 
+        internal static object FindFirstValue(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
