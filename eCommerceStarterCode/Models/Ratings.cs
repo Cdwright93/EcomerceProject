@@ -9,9 +9,11 @@ namespace eCommerceStarterCode.Models
 {
     public class Ratings
     {
-        [Key, ForeignKey("Product")]
+        [Key]
+        public int RatingId { get; set; }
+        [ForeignKey("Product")]
         public int ProductId { get; set; }
-        public double Rating { get; set; }
+        public int Rating { get; set; }
 
         public virtual Product Product { get; set; }
     }

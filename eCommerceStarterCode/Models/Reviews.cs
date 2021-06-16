@@ -9,7 +9,9 @@ namespace eCommerceStarterCode.Models
 {
     public class Reviews
     {
-        [Key, ForeignKey("Product")]
+        [Key]
+        public int ReviewId { get; set; }
+        [ForeignKey("Product")]
         public int ProductId { get; set; }
         public string Comment { get; set; }
 
