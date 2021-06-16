@@ -41,33 +41,6 @@ namespace eCommerceStarterCode.Controllers
 
             return Ok(products);
         }
-        [HttpPost]
-        public IActionResult Post([FromBody] Ratings value)
-        {
-            _context.Ratings.Add(value);
-            _context.SaveChanges();
-            return StatusCode(201, value);
-        }
-        [HttpGet("{id}")]
-        public IActionResult GetAllRatings(int id)
-        {
-            var ratings = _context.Ratings.Where(rate => rate.Product.Id == id);
-
-            return Ok(ratings);
-        }
-        [HttpPost]
-        public IActionResult Post([FromBody] Reviews value)
-        {
-            _context.Reviews.Add(value);
-            _context.SaveChanges();
-            return StatusCode(201, value);
-        }
-        [HttpGet("{id}")]
-        public IActionResult GetAllReviews(int id)
-        {
-            var reviews = _context.Reviews.Where(rev => rev.Product.Id == id);
-
-            return Ok(reviews);
-        }
+    
     }
 }

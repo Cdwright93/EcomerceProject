@@ -48,25 +48,15 @@ namespace eCommerceStarterCode.Migrations
                     b.HasData(
                         new
                         {
-<<<<<<< HEAD
-                            Id = "ce48d1b8-8b32-4762-8f7d-06f16d282e32",
-                            ConcurrencyStamp = "c20f2368-337a-4724-bc8f-432e6f44cf34",
-=======
-                            Id = "17172647-1082-487c-b691-a79a4dd9a848",
-                            ConcurrencyStamp = "aef0a2b9-83ac-4ddd-b92e-2e189b7f545d",
->>>>>>> 9ead288e2ddab59b68d6e108409357b8a5796afb
+                            Id = "efdc7258-d9ff-4550-8f8c-c995fdb139c9",
+                            ConcurrencyStamp = "59598414-aba2-4a9c-a26a-9559e5870a15",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = "d5ec9a28-c34a-41c2-99cf-108685ca0a39",
-                            ConcurrencyStamp = "55065752-2981-4bbb-a372-32f9345ee979",
-=======
-                            Id = "14cc9332-d2ab-486b-825a-57358eff92d7",
-                            ConcurrencyStamp = "f8f2b772-d779-4c39-84ac-5937d81cd7f3",
->>>>>>> 9ead288e2ddab59b68d6e108409357b8a5796afb
+                            Id = "06147798-44d2-4723-b68c-df217963b66b",
+                            ConcurrencyStamp = "c6699a40-6f1f-440f-be37-3636eea0927a",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -249,7 +239,7 @@ namespace eCommerceStarterCode.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ShoppingCart");
+                    b.ToTable("ShoppingCarts");
                 });
 
             modelBuilder.Entity("eCommerceStarterCode.Models.User", b =>
