@@ -13,6 +13,7 @@ namespace eCommerceStarterCode.Data
 
         }
         public DbSet<Product> Products { get; set; }
+        public object Ratings { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

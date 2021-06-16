@@ -48,15 +48,15 @@ namespace eCommerceStarterCode.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7263d1fb-e6e7-4c85-b28d-bc1017e7ce04",
-                            ConcurrencyStamp = "3c570706-db9f-4b48-a964-1a9fe9806793",
+                            Id = "17172647-1082-487c-b691-a79a4dd9a848",
+                            ConcurrencyStamp = "aef0a2b9-83ac-4ddd-b92e-2e189b7f545d",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "404f2b84-7afb-4a7c-913e-5198fcd8efac",
-                            ConcurrencyStamp = "786bfc7c-2132-4e28-8c39-2867a53fa908",
+                            Id = "14cc9332-d2ab-486b-825a-57358eff92d7",
+                            ConcurrencyStamp = "f8f2b772-d779-4c39-84ac-5937d81cd7f3",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -197,8 +197,11 @@ namespace eCommerceStarterCode.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Rating")
-                        .HasColumnType("float");
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RatingId")
+                        .HasColumnType("int");
 
                     b.HasKey("ProductId");
 
@@ -212,6 +215,9 @@ namespace eCommerceStarterCode.Migrations
 
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ReviewId")
+                        .HasColumnType("int");
 
                     b.HasKey("ProductId");
 
