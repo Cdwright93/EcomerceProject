@@ -34,5 +34,12 @@ namespace eCommerceStarterCode.Controllers
 
             return Ok(product);
         }
+        [HttpGet("Product")]
+        public IActionResult GetAllProduct()
+        {
+            var products = _context.Products;
+
+            return Ok(products);
+        }
     }
 }
