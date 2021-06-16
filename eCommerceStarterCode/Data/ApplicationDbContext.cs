@@ -18,6 +18,8 @@ namespace eCommerceStarterCode.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ShoppingCart>().HasKey(SC => new { SC.UserId, SC.ProductId });
+            modelBuilder.Entity<Ratings>().HasKey(r => new { r.ProductId });
+            modelBuilder.Entity<Reviews>().HasKey(r => new { r.ProductId });
             modelBuilder.ApplyConfiguration(new RolesConfiguration());
         }
 

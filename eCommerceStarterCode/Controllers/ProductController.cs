@@ -19,6 +19,13 @@ namespace eCommerceStarterCode.Controllers
         {
             _context = context;
         }
+        [HttpPost]
+        public IActionResult Post([FromBody] Product value)
+        {
+            _context.Products.Add(value);
+            _context.SaveChanges();
+            return StatusCode(201, value);
+        }
         // <baseurl>/api/products/id
         [HttpGet("{id}")]
         public IActionResult GetCurrentProduct(int id)

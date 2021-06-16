@@ -48,15 +48,15 @@ namespace eCommerceStarterCode.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c5da34e1-b6f7-4933-92b5-f3345aa292f7",
-                            ConcurrencyStamp = "8f8df5fb-1e35-477f-a923-17f56aaf6313",
+                            Id = "7263d1fb-e6e7-4c85-b28d-bc1017e7ce04",
+                            ConcurrencyStamp = "3c570706-db9f-4b48-a964-1a9fe9806793",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "f86083d5-53e5-4df4-a249-78106dae6164",
-                            ConcurrencyStamp = "4a8d3ae0-b1fd-434b-9f12-eb100a86fc5c",
+                            Id = "404f2b84-7afb-4a7c-913e-5198fcd8efac",
+                            ConcurrencyStamp = "786bfc7c-2132-4e28-8c39-2867a53fa908",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -190,6 +190,32 @@ namespace eCommerceStarterCode.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("eCommerceStarterCode.Models.Ratings", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Rating")
+                        .HasColumnType("float");
+
+                    b.HasKey("ProductId");
+
+                    b.ToTable("Ratings");
+                });
+
+            modelBuilder.Entity("eCommerceStarterCode.Models.Reviews", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProductId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("eCommerceStarterCode.Models.ShoppingCart", b =>
@@ -337,6 +363,28 @@ namespace eCommerceStarterCode.Migrations
                     b.HasOne("eCommerceStarterCode.Models.User", null)
                         .WithMany("Products")
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("eCommerceStarterCode.Models.Ratings", b =>
+                {
+                    b.HasOne("eCommerceStarterCode.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("eCommerceStarterCode.Models.Reviews", b =>
+                {
+                    b.HasOne("eCommerceStarterCode.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("eCommerceStarterCode.Models.ShoppingCart", b =>
