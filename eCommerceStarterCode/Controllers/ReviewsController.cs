@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace eCommerceStarterCode.Controllers
 {
-    [Route("api/shoppingcart/reviews")]
+    [Route("api/reviews")]
     [ApiController]
     public class ReviewsController : ControllerBase
     {
@@ -27,10 +27,10 @@ namespace eCommerceStarterCode.Controllers
             _context.SaveChanges();
             return StatusCode(201, value);
         }
-        [HttpGet("Reviews")]
-        public IActionResult GetAllReviews()
+        [HttpGet("{Id}")]
+        public IActionResult GetAllReviewsbyId(int Id)
         {
-            var reviews = _context.Reviews;
+            var reviews = _context.Reviews.Where(r => r.Product.Id == Id);
 
             return Ok(reviews);
         }
