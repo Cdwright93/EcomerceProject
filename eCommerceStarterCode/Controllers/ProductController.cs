@@ -41,6 +41,5 @@ namespace eCommerceStarterCode.Controllers
 
             return Ok(products);
         }
-    
     }
 }

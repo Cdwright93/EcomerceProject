@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-using eCommerceStarterCode.Data;
-=======
 ﻿using eCommerceStarterCode.Data;
->>>>>>> f9688a5877e8b4e77afc4e085ca654e75a440122
 using eCommerceStarterCode.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,11 +10,7 @@ using System.Threading.Tasks;
 
 namespace eCommerceStarterCode.Controllers
 {
-<<<<<<< HEAD
     [Route("api/ratings")]
-=======
-    [Route("api/products")]
->>>>>>> f9688a5877e8b4e77afc4e085ca654e75a440122
     [ApiController]
     public class RatingsController : ControllerBase
     {
@@ -27,11 +19,7 @@ namespace eCommerceStarterCode.Controllers
         {
             _context = context;
         }
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> f9688a5877e8b4e77afc4e085ca654e75a440122
         [HttpPost]
         public IActionResult Post([FromBody] Ratings value)
         {
@@ -40,24 +28,13 @@ namespace eCommerceStarterCode.Controllers
             return StatusCode(201, value);
         }
 
-<<<<<<< HEAD
         [HttpGet("{Id}")]
         public IActionResult GetAllRatings(int Id)
         {
             var ratings = _context.Ratings.Where(rat => rat.Product.Id == Id);
-=======
-        [HttpGet("{ProductId}")]
-        public IActionResult GetAllRatings(int ProductId)
-        {
-            var reviews = _context.Reviews.Where(rat => rat.Product.Id == ProductId);
->>>>>>> f9688a5877e8b4e77afc4e085ca654e75a440122
 
-            return Ok(reviews);
+            return Ok(ratings);
         }
 
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> f9688a5877e8b4e77afc4e085ca654e75a440122
