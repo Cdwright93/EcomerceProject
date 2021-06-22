@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
 using eCommerceStarterCode.ActionFilters;
 using eCommerceStarterCode.Contracts;
 using eCommerceStarterCode.DataTransferObjects;

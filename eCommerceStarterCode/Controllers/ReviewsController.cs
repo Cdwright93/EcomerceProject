@@ -34,5 +34,12 @@ namespace eCommerceStarterCode.Controllers
 
             return Ok(reviews);
         }
+        [HttpGet("allreviews")]
+        public IActionResult GetAllReviews()
+        {
+            var reviews = _context.Reviews;
+
+            return Ok(reviews);
+        }
     }
 }

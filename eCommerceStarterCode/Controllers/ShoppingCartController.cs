@@ -32,5 +32,12 @@ namespace eCommerceStarterCode.Controllers
             _context.SaveChanges();
             return StatusCode(201, value);
         }
+        [HttpDelete("{userId}/{productId}")]
+        public IActionResult Delete([FromBody] ShoppingCart value)
+        {
+            _context.ShoppingCarts.Remove(value);
+            _context.SaveChanges();
+            return StatusCode(201, value);
+        }
     }
 }
